@@ -473,13 +473,39 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
+  /* background: hsla(240, 1%, 17%, 0.15); */
+
+  /* backdrop-filter: blur(10px); */
+  /* border: 1px solid var(--jet); */
+  /* border-radius: 12px 12px 0 0; */
+  /* box-shadow: var(--shadow-2); */
+  
   z-index: 5;
 }
+
+
+.navbar-item:hover{
+    /* border: 0.1px solid rgba(255, 255, 255, 0.877); */
+    border-radius: 8px;
+    background: var(--bg-gradient-jet);
+
+  }
+
+  .navbar-item {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: var(--shadow-2);
+    z-index: 1;
+  }
+
+  .navbar-item::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+  }
 
 .navbar-list {
   display: flex;
@@ -490,10 +516,18 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  color: #fff;
   font-size: var(--fs-8);
   padding: 20px 7px;
-  transition: color var(--transition-1);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--bg-gradient-jet);
+
+}
+
+.navbar-link:hover{
+  /* background: var(--bg-gradient-jet); */
+  border: 1px solid rgba(255, 255, 255, 0.484);
 }
 
 .navbar-link:hover,
@@ -540,7 +574,7 @@ main {
   position: relative;
   background: var(--border-gradient-onyx);
   padding: 20px;
-  border-radius: 14px;
+  border-radius: 8px;
   box-shadow: var(--shadow-2);
   z-index: 1;
 }
@@ -1908,4 +1942,60 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+
+
+
+
+
+.block {
+  background-color: rgba(48, 48, 49, 0.859);
+  padding: 15px 30px;
+  /* background-color: red; */
+  z-index: 10;
+}
+
+.block:hover {
+  cursor: pointer; 
+  z-index: 2;
+  /* background-color: #ffffff50; */
+}
+
+.block-outline:hover{
+  background-color: #ffffff50;
+}
+
+.shadow {
+  position: absolute;
+  background-color: rgba(114, 114, 114, 0.808);
+  border-radius: 8px;
+  z-index: 0;
+  transition: all 0.7s ease;
+  pointer-events: none;
+}
+
+
+
+/* CSS for header animation */
+.header {
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

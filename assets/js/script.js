@@ -157,3 +157,29 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const blocks = document.querySelectorAll('.block');
+  const shadow = document.querySelector('.shadow');
+
+  blocks.forEach(block => {
+      block.addEventListener('mouseenter', (e) => {
+          const rect = block.getBoundingClientRect();
+          shadow.style.width = `${rect.width}px`;
+          shadow.style.height = `${rect.height}px`;
+          shadow.style.top = `${rect.top + window.scrollY -60}px`;
+          shadow.style.left = `${rect.left + window.scrollX - 540}px`;
+      });
+  });
+});
+
+
