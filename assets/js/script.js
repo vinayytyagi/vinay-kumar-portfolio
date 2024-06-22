@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
           shadow.style.width = `${rect.width}px`;
           shadow.style.height = `${rect.height}px`;
           shadow.style.top = `${rect.top + window.scrollY -60}px`;
-          shadow.style.left = `${rect.left + window.scrollX - 450}px`;
+          shadow.style.left = `${rect.left + window.scrollX - 470}px`;
       });
   });
 });
